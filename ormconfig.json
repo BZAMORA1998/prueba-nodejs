@@ -1,0 +1,11 @@
+{
+  "type": "mysql",
+  "host": "db4free.net",
+  "port": "3306",
+  "username": "zamora",
+  "password": "25021998bszl_",
+  "database": "sistemas2020",
+  "entities": ["dist/entity/**/*.js"],
+  "logging": false,
+  "synchronize": true
+}
