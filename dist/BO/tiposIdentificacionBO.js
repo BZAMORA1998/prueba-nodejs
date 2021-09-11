@@ -36,63 +36,20 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var typeorm_1 = require("typeorm");
-var TiposIdentificacion_1 = require("../entity/TiposIdentificacion");
-exports.getTiposIdentificacionDAO = function () { return __awaiter(void 0, void 0, void 0, function () {
+var tiposIdentificacionDAO_1 = require("../DAO/tiposIdentificacionDAO");
+exports.getTiposIdentificacionBO = function () { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, typeorm_1.getRepository(TiposIdentificacion_1.TiposIdentificacion).find()];
+            case 0: return [4 /*yield*/, tiposIdentificacionDAO_1.getTiposIdentificacionDAO()];
             case 1: return [2 /*return*/, _a.sent()];
         }
     });
 }); };
-exports.getTipoIdentificacionDAO = function (id) { return __awaiter(void 0, void 0, void 0, function () {
+exports.getTipoIdentificacionBO = function (id) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, typeorm_1.getRepository(TiposIdentificacion_1.TiposIdentificacion).findOne(id)];
+            case 0: return [4 /*yield*/, tiposIdentificacionDAO_1.getTipoIdentificacionDAO(id)];
             case 1: return [2 /*return*/, _a.sent()];
-        }
-    });
-}); };
-exports.postTipoIdentificacionDAO = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var newTiposIdentificacion, results;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4 /*yield*/, typeorm_1.getRepository(TiposIdentificacion_1.TiposIdentificacion).create(req.body)];
-            case 1:
-                newTiposIdentificacion = _a.sent();
-                return [4 /*yield*/, typeorm_1.getRepository(TiposIdentificacion_1.TiposIdentificacion).save(newTiposIdentificacion)];
-            case 2:
-                results = _a.sent();
-                return [2 /*return*/, res.json(results)];
-        }
-    });
-}); };
-exports.putTipoIdentificacionDAO = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var tiposIdentificacion, results;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4 /*yield*/, typeorm_1.getRepository(TiposIdentificacion_1.TiposIdentificacion).findOne(req.params.id)];
-            case 1:
-                tiposIdentificacion = _a.sent();
-                if (!tiposIdentificacion) return [3 /*break*/, 3];
-                typeorm_1.getRepository(TiposIdentificacion_1.TiposIdentificacion).merge(tiposIdentificacion, req.body);
-                return [4 /*yield*/, typeorm_1.getRepository(TiposIdentificacion_1.TiposIdentificacion).save(tiposIdentificacion)];
-            case 2:
-                results = _a.sent();
-                return [2 /*return*/, res.json(results)];
-            case 3: return [2 /*return*/, res.json({ msg: 'Not user found' })];
-        }
-    });
-}); };
-exports.deleteTipoIdentificacionDAO = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var results;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4 /*yield*/, typeorm_1.getRepository(TiposIdentificacion_1.TiposIdentificacion).delete(req.params.id)];
-            case 1:
-                results = _a.sent();
-                return [2 /*return*/, res.json(results)];
         }
     });
 }); };

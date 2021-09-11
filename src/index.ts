@@ -3,7 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors'
 import {createConnection} from 'typeorm'
 
-import userRoutes from './router/user.routes'
+import tiposIdentificacionRoutes from './router/tiposIdentificacion.routes'
 
 const app = express();
 createConnection();
@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 // routes
-app.use(userRoutes);
+app.use(tiposIdentificacionRoutes);
 
 app.listen(8080);
 console.log('Server on port', 8080);
