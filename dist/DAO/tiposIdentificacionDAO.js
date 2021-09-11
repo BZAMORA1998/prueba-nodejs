@@ -42,7 +42,9 @@ exports.getTiposIdentificacionDAO = function () { return __awaiter(void 0, void 
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: return [4 /*yield*/, typeorm_1.getRepository(TiposIdentificacion_1.TiposIdentificacion).find()];
-            case 1: return [2 /*return*/, _a.sent()];
+            case 1: 
+            //const entityManager = getManager();
+            return [2 /*return*/, _a.sent()];
         }
     });
 }); };
@@ -54,27 +56,45 @@ exports.getTipoIdentificacionDAO = function (id) { return __awaiter(void 0, void
         }
     });
 }); };
-// export const postTipoIdentificacionDAO = async (
-//   req: Request,
-//   res: Response
-// ): Promise<Response> => {
-//   const newTiposIdentificacion = await getRepository(TiposIdentificacion).create(req.body);
-//   const results = await getRepository(TiposIdentificacion).save(newTiposIdentificacion);
-//   return res.json(results);
-// };
-// export const putTipoIdentificacionDAO = async (
-//   req: Request,
-//   res: Response
-// ): Promise<Response> => {
-//   const tiposIdentificacion = await getRepository(TiposIdentificacion).findOne(req.params.id);
-//   if (tiposIdentificacion) {
-//     getRepository(TiposIdentificacion).merge(tiposIdentificacion, req.body);
-//     const results = await getRepository(TiposIdentificacion).save(tiposIdentificacion);
-//     return res.json(results);
-//   }
-//    return res.json({msg: 'Not user found'});
-//  };
-// export const deleteTipoIdentificacionDAO = async (req: Request, res: Response): Promise<Response> => {
-//   const results = await getRepository(TiposIdentificacion).delete(req.params.id);
-//   return res.json(results);
-// };
+exports.postTipoIdentificacionDAO = function (body) { return __awaiter(void 0, void 0, void 0, function () {
+    var newTiposIdentificacion, results;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, typeorm_1.getRepository(TiposIdentificacion_1.TiposIdentificacion).create(body)];
+            case 1:
+                newTiposIdentificacion = _a.sent();
+                return [4 /*yield*/, typeorm_1.getRepository(TiposIdentificacion_1.TiposIdentificacion).save(newTiposIdentificacion)];
+            case 2:
+                results = _a.sent();
+                return [2 /*return*/, results];
+        }
+    });
+}); };
+exports.putTipoIdentificacionDAO = function (body) { return __awaiter(void 0, void 0, void 0, function () {
+    var tiposIdentificacion, results;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, typeorm_1.getRepository(TiposIdentificacion_1.TiposIdentificacion).findOne(body.secuenciaTipoIdentificacion)];
+            case 1:
+                tiposIdentificacion = _a.sent();
+                if (!tiposIdentificacion) return [3 /*break*/, 3];
+                typeorm_1.getRepository(TiposIdentificacion_1.TiposIdentificacion).merge(tiposIdentificacion, body);
+                return [4 /*yield*/, typeorm_1.getRepository(TiposIdentificacion_1.TiposIdentificacion).save(tiposIdentificacion)];
+            case 2:
+                results = _a.sent();
+                return [2 /*return*/, results];
+            case 3: throw "Secuencia tipo de identificacion no existe";
+        }
+    });
+}); };
+exports.deleteTipoIdentificacionDAO = function (id) { return __awaiter(void 0, void 0, void 0, function () {
+    var results;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, typeorm_1.getRepository(TiposIdentificacion_1.TiposIdentificacion).delete(id)];
+            case 1:
+                results = _a.sent();
+                return [2 /*return*/, null];
+        }
+    });
+}); };

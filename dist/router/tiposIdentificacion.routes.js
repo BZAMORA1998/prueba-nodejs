@@ -37,37 +37,111 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = require("express");
-var tiposIdentificacionBO_1 = require("../BO/tiposIdentificacionBO");
+var tiposIdentificacionBO_1 = require("../bo/tiposIdentificacionBO");
+var Response_1 = require("../dto/Response");
 var router = express_1.Router();
 router.get("/tiposIdentificacion", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var _a, _b, error_1;
-    return __generator(this, function (_c) {
-        switch (_c.label) {
+    var _a, _b, _c, _d, error_1, _e, _f;
+    return __generator(this, function (_g) {
+        switch (_g.label) {
             case 0:
-                _c.trys.push([0, 2, , 3]);
+                _g.trys.push([0, 3, , 5]);
                 _b = (_a = res).send;
+                _c = Response_1.Response200;
+                _d = ["OK"];
                 return [4 /*yield*/, tiposIdentificacionBO_1.getTiposIdentificacionBO()];
-            case 1: return [2 /*return*/, _b.apply(_a, [_c.sent()])];
-            case 2:
-                error_1 = _c.sent();
-                return [2 /*return*/, res.send(error_1)];
-            case 3: return [2 /*return*/];
+            case 1: return [4 /*yield*/, _c.apply(void 0, _d.concat([_g.sent()]))];
+            case 2: return [2 /*return*/, _b.apply(_a, [_g.sent()])];
+            case 3:
+                error_1 = _g.sent();
+                _f = (_e = res).send;
+                return [4 /*yield*/, Response_1.Response400(error_1, null)];
+            case 4: return [2 /*return*/, _f.apply(_e, [_g.sent()])];
+            case 5: return [2 /*return*/];
         }
     });
 }); });
 router.get("/tiposIdentificacion/:id", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var _a, _b, error_2;
-    return __generator(this, function (_c) {
-        switch (_c.label) {
+    var _a, _b, _c, _d, error_2, _e, _f;
+    return __generator(this, function (_g) {
+        switch (_g.label) {
             case 0:
-                _c.trys.push([0, 2, , 3]);
+                _g.trys.push([0, 3, , 5]);
                 _b = (_a = res).send;
+                _c = Response_1.Response200;
+                _d = ["OK"];
                 return [4 /*yield*/, tiposIdentificacionBO_1.getTipoIdentificacionBO(req.params.id)];
-            case 1: return [2 /*return*/, _b.apply(_a, [_c.sent()])];
-            case 2:
-                error_2 = _c.sent();
-                return [2 /*return*/, res.send(error_2)];
-            case 3: return [2 /*return*/];
+            case 1: return [4 /*yield*/, _c.apply(void 0, _d.concat([_g.sent()]))];
+            case 2: return [2 /*return*/, _b.apply(_a, [_g.sent()])];
+            case 3:
+                error_2 = _g.sent();
+                _f = (_e = res).send;
+                return [4 /*yield*/, Response_1.Response400(error_2, null)];
+            case 4: return [2 /*return*/, _f.apply(_e, [_g.sent()])];
+            case 5: return [2 /*return*/];
+        }
+    });
+}); });
+router.post("/tiposIdentificacion", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var _a, _b, _c, _d, error_3, _e, _f;
+    return __generator(this, function (_g) {
+        switch (_g.label) {
+            case 0:
+                _g.trys.push([0, 3, , 5]);
+                _b = (_a = res).send;
+                _c = Response_1.Response200;
+                _d = ["OK"];
+                return [4 /*yield*/, tiposIdentificacionBO_1.postTipoIdentificacionBO(req.body)];
+            case 1: return [4 /*yield*/, _c.apply(void 0, _d.concat([_g.sent()]))];
+            case 2: return [2 /*return*/, _b.apply(_a, [_g.sent()])];
+            case 3:
+                error_3 = _g.sent();
+                _f = (_e = res).send;
+                return [4 /*yield*/, Response_1.Response400(error_3, null)];
+            case 4: return [2 /*return*/, _f.apply(_e, [_g.sent()])];
+            case 5: return [2 /*return*/];
+        }
+    });
+}); });
+router.put("/tiposIdentificacion", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var _a, _b, _c, _d, error_4, _e, _f;
+    return __generator(this, function (_g) {
+        switch (_g.label) {
+            case 0:
+                _g.trys.push([0, 3, , 5]);
+                _b = (_a = res).send;
+                _c = Response_1.Response200;
+                _d = ["OK"];
+                return [4 /*yield*/, tiposIdentificacionBO_1.putTipoIdentificacionBO(req.body)];
+            case 1: return [4 /*yield*/, _c.apply(void 0, _d.concat([_g.sent()]))];
+            case 2: return [2 /*return*/, _b.apply(_a, [_g.sent()])];
+            case 3:
+                error_4 = _g.sent();
+                _f = (_e = res).send;
+                return [4 /*yield*/, Response_1.Response400(error_4, null)];
+            case 4: return [2 /*return*/, _f.apply(_e, [_g.sent()])];
+            case 5: return [2 /*return*/];
+        }
+    });
+}); });
+router.delete("/tiposIdentificacion/:id", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var _a, _b, _c, _d, error_5, _e, _f;
+    return __generator(this, function (_g) {
+        switch (_g.label) {
+            case 0:
+                _g.trys.push([0, 3, , 5]);
+                _b = (_a = res).send;
+                _c = Response_1.Response200;
+                _d = ["OK"];
+                return [4 /*yield*/, tiposIdentificacionBO_1.deleteTipoIdentificacionBO(req.params.id)];
+            case 1: return [4 /*yield*/, _c.apply(void 0, _d.concat([_g.sent()]))];
+            case 2: return [2 /*return*/, _b.apply(_a, [_g.sent()])];
+            case 3:
+                error_5 = _g.sent();
+                _f = (_e = res).send;
+                return [4 /*yield*/, Response_1.Response400(error_5, null)];
+            case 4: return [2 /*return*/, _f.apply(_e, [_g.sent()])];
+            case 5: return [2 /*return*/];
         }
     });
 }); });

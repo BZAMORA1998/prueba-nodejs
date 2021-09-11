@@ -36,55 +36,15 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var tiposIdentificacionDAO_1 = require("../dao/tiposIdentificacionDAO");
-exports.getTiposIdentificacionBO = function () { return __awaiter(void 0, void 0, void 0, function () {
+exports.getTipoIdentificacionBO = function (message, data) { return __awaiter(void 0, void 0, void 0, function () {
+    var respose;
     return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4 /*yield*/, tiposIdentificacionDAO_1.getTiposIdentificacionDAO()];
-            case 1: return [2 /*return*/, _a.sent()];
-        }
-    });
-}); };
-exports.getTipoIdentificacionBO = function (id) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4 /*yield*/, tiposIdentificacionDAO_1.getTipoIdentificacionDAO(id)];
-            case 1: return [2 /*return*/, _a.sent()];
-        }
-    });
-}); };
-exports.postTipoIdentificacionBO = function (body) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                if (body.nombre == null)
-                    throw "El nombre es obligatorio";
-                return [4 /*yield*/, tiposIdentificacionDAO_1.postTipoIdentificacionDAO(body)];
-            case 1: return [2 /*return*/, _a.sent()];
-        }
-    });
-}); };
-exports.putTipoIdentificacionBO = function (body) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                if (body.secuenciaTipoIdentificacion == null)
-                    throw "El secuenciaTipoIdentificacion es obligatorio";
-                if (body.nombre == null)
-                    throw "El nombre es obligatorio";
-                return [4 /*yield*/, tiposIdentificacionDAO_1.putTipoIdentificacionDAO(body)];
-            case 1: return [2 /*return*/, _a.sent()];
-        }
-    });
-}); };
-exports.deleteTipoIdentificacionBO = function (id) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                if (id == null)
-                    throw "El id es obligatorio";
-                return [4 /*yield*/, tiposIdentificacionDAO_1.deleteTipoIdentificacionDAO(id)];
-            case 1: return [2 /*return*/, _a.sent()];
-        }
+        respose = {
+            code: 200,
+            success: true,
+            message: message,
+            data: data
+        };
+        return [2 /*return*/, respose];
     });
 }); };
