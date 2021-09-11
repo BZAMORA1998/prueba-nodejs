@@ -16,5 +16,5 @@ app.use(express_1.default.json());
 app.use(morgan_1.default('dev'));
 // routes
 app.use(user_routes_1.default);
-app.listen(3000);
-console.log('Server on port', 3000);
+app.listen(8080);
+console.log('Server on port', 8080);

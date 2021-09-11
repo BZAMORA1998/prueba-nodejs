@@ -14,15 +14,15 @@ var TiposIdentificacion = /** @class */ (function () {
     function TiposIdentificacion() {
     }
     __decorate([
-        typeorm_1.PrimaryGeneratedColumn(),
+        typeorm_1.PrimaryGeneratedColumn({ name: "secuencia_tipo_identificacion" }),
         __metadata("design:type", Number)
-    ], TiposIdentificacion.prototype, "secuaencia_tipo_identificacion", void 0);
+    ], TiposIdentificacion.prototype, "secuenciaTipoIdentificacion", void 0);
     __decorate([
-        typeorm_1.Column(),
+        typeorm_1.Column({ name: "nombre" }),
         __metadata("design:type", String)
     ], TiposIdentificacion.prototype, "nombre", void 0);
     TiposIdentificacion = __decorate([
-        typeorm_1.Entity()
+        typeorm_1.Entity({ name: "tbl_tipos_identificacion" })
     ], TiposIdentificacion);
     return TiposIdentificacion;
 }());

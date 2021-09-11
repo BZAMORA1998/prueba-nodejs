@@ -10,38 +10,38 @@ export const getTiposIdentificacion = async (
   return res.json(tiposIdentificacion);
 };
 
-// export const getUser = async (
-//   req: Request,
-//   res: Response
-// ): Promise<Response> => {
-//   const results = await getRepository(User).findOne(req.params.id);
-//   return res.json(results);
-// };
+export const getTipoIdentificacion = async (
+  req: Request,
+  res: Response
+): Promise<Response> => {
+  const results = await getRepository(TiposIdentificacion).findOne(req.params.id);
+  return res.json(results);
+};
 
-// export const createUser = async (
-//   req: Request,
-//   res: Response
-// ): Promise<Response> => {
-//   const newUser = await getRepository(User).create(req.body);
-//   const results = await getRepository(User).save(newUser);
-//   return res.json(results);
-// };
+export const postTipoIdentificacion = async (
+  req: Request,
+  res: Response
+): Promise<Response> => {
+  const newTiposIdentificacion = await getRepository(TiposIdentificacion).create(req.body);
+  const results = await getRepository(TiposIdentificacion).save(newTiposIdentificacion);
+  return res.json(results);
+};
 
-// export const updateUser = async (
-//   req: Request,
-//   res: Response
-// ): Promise<Response> => {
-//   const user = await getRepository(User).findOne(req.params.id);
-//   if (user) {
-//     getRepository(User).merge(user, req.body);
-//     const results = await getRepository(User).save(user);
-//     return res.json(results);
-//   }
+export const putTipoIdentificacion = async (
+  req: Request,
+  res: Response
+): Promise<Response> => {
+  const tiposIdentificacion = await getRepository(TiposIdentificacion).findOne(req.params.id);
+  if (tiposIdentificacion) {
+    getRepository(TiposIdentificacion).merge(tiposIdentificacion, req.body);
+    const results = await getRepository(TiposIdentificacion).save(tiposIdentificacion);
+    return res.json(results);
+  }
 
-//   return res.json({msg: 'Not user found'});
-// };
+   return res.json({msg: 'Not user found'});
+ };
 
-// export const deleteUser = async (req: Request, res: Response): Promise<Response> => {
-//   const results = await getRepository(User).delete(req.params.id);
-//   return res.json(results);
-// };
+export const deleteTipoIdentificacion = async (req: Request, res: Response): Promise<Response> => {
+  const results = await getRepository(TiposIdentificacion).delete(req.params.id);
+  return res.json(results);
+};

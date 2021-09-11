@@ -1,10 +1,10 @@
 import {Entity, Column, PrimaryGeneratedColumn} from 'typeorm'
 
-@Entity()
+@Entity({ name: "tbl_tipos_identificacion" })
 export class TiposIdentificacion {
-  @PrimaryGeneratedColumn()
-  secuaencia_tipo_identificacion: number;
+  @PrimaryGeneratedColumn({ name: "secuencia_tipo_identificacion"})
+  secuenciaTipoIdentificacion: number;
 
-  @Column()
+  @Column({ name: "nombre"})
   nombre: string;
 }
